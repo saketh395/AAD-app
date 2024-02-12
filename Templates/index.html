@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
+    <title>Bike Rentals Prediction</title>
+</head>
+<body>
+    <h1 id="heading">Bike Rentals Prediction</h1>
+    <form id="predictionForm" method="POST" action="/predict">
+
+        <div id="output" >
+            <h3>Output</h3>
+            {% if output %}
+            <h4>{{output}}</h4>
+            {% endif %}
+        </div><br>
+
+        <label for="day">Day (1 to 31):</label><br>
+        <input type="number" id="day" name="day" placeholder="Ex: 12" min="1" max="31" required><br>
+
+        <label for="month">Month (1 to 12):</label><br>
+        <input type="number" id="month" name="month" placeholder="Ex: 6" min="1" max="12" required><br>
+
+        <label for="year">Year (2011 - 2013):</label><br>
+        <input type="number" id="year" name="year" placeholder="Ex: 2012" min="2011" max="2013" required><br>
+
+        <label for="season">Season ( 1.Spring 2.Summer 3.Autumn 4.Winter ):</label><br>
+        <input type="number" id="season" name="season" placeholder="Ex: 2" min="1" max="4" required><br>
+
+        <label for="holiday">Holiday ( Yes:1 or No:0 ):</label><br>
+        <input type="number" id="holiday" name="holiday" placeholder="Ex: 0" min="0" max="1" required><br>
+
+        <label for="week_day">Week Day ( Sun:0, Mon:1, Tue:2, Wed:3, Thur:4, Fri:5, Sat:6 )</label><br>
+        <input type="number" id="week_day" name="week_day" placeholder="Ex: 2" min="0" max="6" required><br>
+
+        <label for="working_day">Working Day ( Yes:1 or No:0 )</label><br>
+        <input type="number" id="working_day" name="working_day" placeholder="Ex: 1" min="0" max="1" required><br>
+
+        <label for="weather_quality">Weather Quality ( low:1, med:2 high:3 )</label><br>
+        <input type="number" id="weather_quality" name="weather_quality" placeholder="Ex: 1" min="1" max="3" required><br>
+
+        <label for="min_temperature">Min Temperature in celcius</label><br>
+        <input type="number" id="min_temperature" name="min_temperature" placeholder="Ex: 22.4" step="0.01" required><br>
+
+        <label for="max_temperature">Max Temperature in celcius</label><br>
+        <input type="number" id="max_temperature" name="max_temperature" placeholder="Ex: 22.4" step="0.01" required><br>
+
+        <label for="Humidity">Humidity percentage ( 20-80 %)</label><br>
+        <input type="number" id="Humidity" name="Humidity" placeholder="Ex: 25" min="20" max="80" step="0.01" required><br>
+
+        <label for="wind_speed">Enter Wind Speed</label><br>
+        <input type="number" id="wind_speed" name="wind_speed" placeholder="Ex: 35.5" step="0.01" required><br>
+        <!-- Include other input fields here -->
+        <input type="submit" value="Predict" onclick="UnhideOutput()">
+
+    </form>
+<script src="../index.js"></script>
+
+</body>
+</html>
